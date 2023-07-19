@@ -1,0 +1,113 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "plugin:cypress/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort", "cypress", "unused-imports"],
+  "rules": {
+    "react/react-in-jsx-scope": ["off"],
+    "unused-imports/no-unused-imports": "error",
+    "eol-last": ["error", "always"],
+    "newline-before-return": 1,
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Vendor packages
+          ["^react", "^@?\\w"],
+          ["^axios", "^@?\\w"],
+          ["^cypress", "^@?\\w"],
+          ["^date-fns", "^@?\\w"],
+          ["^dotenv", "^@?\\w"],
+          ["^flagged", "^@?\\w"],
+          ["^i18next", "^@?\\w"],
+          ["^lodash", "^@?\\w"],
+          ["^logrocket", "^@?\\w"],
+          ["^path", "^@?\\w"],
+          ["^vite", "^@?\\w"],
+          ["^@auth0", "^@?\\w"],
+          ["^@datadog", "^@?\\w"],
+          ["^@emotion", "^@?\\w"],
+          ["^@mantine", "^@?\\w"],
+          ["^@reduxjs", "^@?\\w"],
+          ["^@rollup", "^@?\\w"],
+          ["^@rtk-query", "^@?\\w"],
+          ["^@tabler", "^@?\\w"],
+          ["^@testing-library", "^@?\\w"],
+          ["^@vite", "^@?\\w"],
+          // Types
+          ["^(types)(/.*|$)"],
+          ["^(@enums)(/.*|$)"],
+          // Internal
+          ["^(@assets)(/.*|$)"],
+          ["^(@atoms)(/.*|$)"],
+          ["^(@auth)(/.*|$)"],
+          ["^(@constants)(/.*|$)"],
+          ["^(@cypressUtils)(/.*|$)"],
+          ["^(@dictionaries)(/.*|$)"],
+          ["^(@hooks)(/.*|$)"],
+          ["^(@layout)(/.*|$)"],
+          ["^(@locales)(/.*|$)"],
+          ["^(@molecules)(/.*|$)"],
+          ["^(@organisms)(/.*|$)"],
+          ["^(@pages)(/.*|$)"],
+          ["^(@redux)(/.*|$)"],
+          ["^(@routes)(/.*|$)"],
+          ["^(@utils)(/.*|$)"],
+          ["^(@theme)(/.*|$)"],
+          // Parent and relative imports
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {},
+      "alias": {
+        "map": [
+          ["@assets", "./src/assets"],
+          ["@atoms", "./src/components/atoms"],
+          ["@auth", "./src/auth"],
+          ["@constants", "./src/constants"],
+          ["@dictionaries", "./src/dictionaries"],
+          ["@enums", "./src/enums"],
+          ["@hooks", "./src/hooks"],
+          ["@layout", "./src/components/layout"],
+          ["@locales", "./src/locales"],
+          ["@molecules", "./src/components/molecules"],
+          ["@organisms", "./src/components/organisms"],
+          ["@pages", "./src/components/pages"],
+          ["@redux", "./src/redux"],
+          ["@routes", "./src/routes"],
+          ["@utils", "./src/utils"],
+          ["@theme", "./src/theme"],
+          ["types", "./src/types"]
+        ],
+        "extensions": [".css", ".tsx", ".ts", ".js", ".json"]
+      }
+    }
+  }
+}
