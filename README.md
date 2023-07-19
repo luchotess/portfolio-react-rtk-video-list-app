@@ -18,7 +18,7 @@ Welcome to My Vite App, a modern application built with Vite. This application u
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/tu-usuario/mi-aplicacion-con-vite.git
+git clone https://github.com/luchotess/portfolio-react-rtk-video-list-app.git
 ```
    
 2. Navigate to the application directory:
