@@ -9,6 +9,7 @@ const AppRouter: React.FC = () => {
   const authContext = useContext(AuthContext)
   const { user } = authContext
 
+  // todo: Add real user auth validation
   const isUserAuthenticated = () => user?.email
 
   return (
@@ -17,6 +18,8 @@ const AppRouter: React.FC = () => {
         <Route path="/login" element={<Login />} />
 
         <Route path="/home" element={isUserAuthenticated() ? <Home /> : <Navigate to="/login" />} />
+
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   )
